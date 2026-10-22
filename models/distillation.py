@@ -6,13 +6,13 @@ class ISDDistillationLoss(nn.Module):
     def __init__(self, alpha=0.5, tau=1.0, K=6, 
                  lambda_s_kd=1.0, lambda_b_kd=0.5, lambda_n_kd=0.5, lambda_R=0.5):
         super().__init__()
-        self.alpha = alpha                # 论文公式 (6) 平衡系数
-        self.tau = tau                    # 论文公式 (9) 温度系数
-        self.K = K                        # 论文公式 (10) 尺度聚合范围 K=6
-        self.lambda_s_kd = lambda_s_kd    # 论文公式 (22)
-        self.lambda_b_kd = lambda_b_kd    # 论文公式 (22)
-        self.lambda_n_kd = lambda_n_kd    # 论文公式 (25)
-        self.lambda_R = lambda_R          # 论文公式 (25)
+        self.alpha = alpha                
+        self.tau = tau                    
+        self.K = K                        
+        self.lambda_s_kd = lambda_s_kd    
+        self.lambda_b_kd = lambda_b_kd    
+        self.lambda_n_kd = lambda_n_kd    
+        self.lambda_R = lambda_R          
         self.eps = 1e-7
 
     def compute_prediction_relevance(self, feat, cls_pred, box_loss):
